@@ -1,9 +1,9 @@
 import logo from '../assets/Logo.svg'
 const Nav = () => {
     return (
-        <nav>
-            <a href='/'>
-            <img src={logo} alt='Logo'/>
+        <nav className="navbar">
+            <a href="/">
+            <img src={logo} alt="Logo"/>
             </a>
             {/* Navbar items */}
             <ul>
