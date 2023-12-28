@@ -1,31 +1,42 @@
 import logo from '../assets/Logo.svg'
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+
 const Nav = () => {
+    const [click, setclick] = useState(false)
+    const handleclick = () => setclick(!click);
+
     return (
         <nav className="navbar">
             <a href="/">
             <img src={logo} alt="Logo"/>
             </a>
             {/* Navbar items */}
-            <ul>
+            <ul className={click ? "nav-menu active" : "nav-menu"}>
                 <li>
-                    <a href="/">Home</a>
+                    <Link to="/">Home</Link>
                 </li>
                 <li>
-                    <a href="/">About</a>
+                    <Link to="/">About</Link>
                 </li>
                 <li>
-                    <a href="/">Menu</a>
+                    <Link to="/">Menu</Link>
                 </li>
                 <li>
-                    <a href="/">Reservation</a>
+                    <Link to="/">Reservation</Link>
                 </li>
                 <li>
-                    <a href="/">Order Online</a>
+                    <Link to="/">Order Online</Link>
                 </li>
                 <li>
-                    <a href="/">Login</a>
+                    <Link to="/">Login</Link>
                 </li>
             </ul>
+            <div className="nav-icon" onClick={handleclick}>
+                <span class={!click? "bar1" : "bar1 active1"}></span>
+                <span class={!click? "bar2" : "bar2 active2"}></span>
+                <span class={!click? "bar3" : "bar3 active3"}></span>
+            </div>
         </nav>
     )
 }
